@@ -18,9 +18,10 @@
  
 - In the water jug problem in Artificial Intelligence,  provided two jugs: 
 - one having the capacity to hold 3 gallons of water and the other has the capacity to hold 4 gallons of water.
-- There is no other measuring equipment available and the jugs also do not have any kind of marking on them. So, the agent’s task here is to fill the 4-gallon jug with 2 gallons of water by using only these two jugs and no other material. Initially, both our jugs are empty.
+- There is no other measuring equipment available and the jugs also do not have any kind of marking on them. So, the agent’s task here is to fill one of the jugs with 2 gallons of water by using only these two jugs and no other material. Initially, both our jugs are empty.
  
  ## Production rules for solving the water jug problem
+We have used in this project only the 6 production rules from the following specified ones.
 Here, let x denote the 4-gallon jug and y denote the 3-gallon jug.
 
 | S.No. |	Initial State	| Condition    |	Final state  |	Description of action taken                                          |
@@ -49,4 +50,4 @@ Here, let x denote the 4-gallon jug and y denote the 3-gallon jug.
 | 5.   |	4 gallons	            | 2 gallons	            | Rule no. 7    |
 
 
-On reaching the 7th attempt, we reach a state which is our goal state. Therefore, at this state, our problem is solved.
+On reaching the 5th attempt, we reach a state which is our goal state. Therefore, at this state, our problem is solved.
