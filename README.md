@@ -1,4 +1,20 @@
 # Water-jug-problem
+# AI Group Assignment 1:  Water-jug-problem
+
+
+
+|S.No. |Group's name	                | Stud_id            ||
+|------|-----------------------|-----------------------|------|
+| 1.   |	Akrem Beshir                |  ugr/172051/12   |  |
+| 2.   |	Bereket Hailay              |  ugr/172051/12   |  |
+| 3.   |	Daniel Assefa	            |  ugr/172051/12   |  |
+| 4.   |	Dibora Damtew	            |  ugr/172051/12   |  |
+| 5.   |	Hayelom Fereja	            |  ugr/172051/12   |  |
+
+
+
+
+ 
  
 - In the water jug problem in Artificial Intelligence,  provided two jugs: 
 - one having the capacity to hold 3 gallons of water and the other has the capacity to hold 4 gallons of water.
@@ -31,7 +47,6 @@ Here, let x denote the 4-gallon jug and y denote the 3-gallon jug.
 | 3.   |	3 gallons	            | 0 gallon	             | Rule no. 9    |
 | 4.   |	3 gallons	            | 3 gallons	            | Rule no. 2    |
 | 5.   |	4 gallons	            | 2 gallons	            | Rule no. 7    |
-| 6.   |	0 gallon	             | 2 gallons	            | Rule no. 5    |
-| 7.   |	2 gallons	            | 0 gallon	             |Rule no. 9     |
+
 
 On reaching the 7th attempt, we reach a state which is our goal state. Therefore, at this state, our problem is solved.

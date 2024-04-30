@@ -1,102 +1,167 @@
-def water_jug_problem(x, y, z):
-    # Initial states of the jugs
-    jug1 = 0
-    jug2 = 0
 
-    # Lists to store the solution steps
-    solution_steps = []
-    visited_states = set()
+'''    Water-Jug solution using Breadth First Search Algorithm  '''
 
-    def pour_jug1_to_jug2():
-        nonlocal jug1, jug2
-        if jug1 > 0 and jug2 < y:
-            amount_poured = min(jug1, y - jug2)
-            jug1 -= amount_poured
-            jug2 += amount_poured
-            return True
-        return False
+#                    AI Group Assignment 1
 
-    def pour_jug2_to_jug1():
-        nonlocal jug1, jug2
-        if jug2 > 0 and jug1 < x:
-            amount_poured = min(jug2, x - jug1)
-            jug2 -= amount_poured
-            jug1 += amount_poured
-            return True
-        return False
+#            Group member's name        stud_id
 
-    def empty_jug1():
-        nonlocal jug1
-        if jug1 > 0:
-            jug1 = 0
-            return True
-        return False
-
-    def empty_jug2():
-        nonlocal jug2
-        if jug2 > 0:
-            jug2 = 0
-            return True
-        return False
-
-    def fill_jug1():
-        nonlocal jug1
-        if jug1 < x:
-            jug1 = x
-            return True
-        return False
-
-    def fill_jug2():
-        nonlocal jug2
-        if jug2 < y:
-            jug2 = y
-            return True
-        return False
-
-    def is_goal_state():
-        return jug1 == z or jug2 == z
-
-    def is_valid_state():
-        return (jug1, jug2) not in visited_states
-
-    def record_state():
-        visited_states.add((jug1, jug2))
-
-    def print_solution():
-        print("Solution Steps:")
-        for step in solution_steps:
-            print(step)
-
-    def solve():
-        while not is_goal_state():
-            if is_valid_state():
-                record_state()
-                if pour_jug1_to_jug2():
-                    solution_steps.append(f"Pour water from jug 1 to jug 2: {jug1}L, {jug2}L")
-                elif pour_jug2_to_jug1():
-                    solution_steps.append(f"Pour water from jug 2 to jug 1: {jug1}L, {jug2}L")
-                elif empty_jug1():
-                    solution_steps.append(f"Empty jug 1: {jug1}L, {jug2}L")
-                elif empty_jug2():
-                    solution_steps.append(f"Empty jug 2: {jug1}L, {jug2}L")
-                elif fill_jug1():
-                    solution_steps.append(f"Fill jug 1: {jug1}L, {jug2}L")
-                elif fill_jug2():
-                    solution_steps.append(f"Fill jug 2: {jug1}L, {jug2}L")
-            else:
-                return False
-
-        print_solution()
-        return True
+#             1. Akrem Beshir            ugr/172051/12
+#             2. Bereket Hailay
+#             3. Daniel Assefa
+#             4. Dibora Damtew
+#             5. Hayelom Fereja
 
 
-# Taking user input for jug capacities and desired liters
-x = int(input("Enter the capacity of jug 1 (in liters): "))
-y = int(input("Enter the capacity of jug 2 (in liters): "))
-z = int(input("Enter the desired liters (to be measured): "))
+print ("Solution for water jug problem")
 
-# Solving the water jug problem
-if water_jug_problem(x, y, z):
-    print("Goal state reached!")
+# These lines prompt the user to enter the capacities of Jug A and Jug B,
+# as well as the target volumes for Jug A and Jug B. The inputs are read as
+# integers and assigned to the respective variables.
+
+x_capacity = int(input("Enter Jug A capacity:"))
+y_capacity = int(input("Enter Jug B capacity:"))
+end_x = int(input("Enter target volume of jug A:"))
+end_y = int(input("Enter target volume of jug B:"))
+
+
+
+
+
+
+# This line defines the bfs function, which takes the start state, end state, 
+# and the capacities of the jugs as parameters.
+
+def bfs(start, end, x_capacity, y_capacity):
+	
+
+
+
+
+    
+#   These lines initialize the empty lists path, front, and visited.
+
+#     - path will store the sequence of states visited during the search.
+#     - front will serve as the queue to store the states that are yet to be explored. 
+#        It is initialized with the start state.
+#     - visited will keep track of the states that have been visited to avoid revisiting them.
+
+	path = []
+	front = []
+	front.append(start)
+	visited = []
+	
+
+
+
+#   This line starts a while loop that continues until the front queue is empty.
+#   The condition not (not front) checks whether front is not empty.
+
+# The lines retrieve the current state from the front of the queue (front) using the pop()function.
+# The current state is a list where the first element represents the volume of Jug A (x) and
+# the second element represents the volume of Jug B (y). 
+# The current state is appended to the path list.
+
+	while(not (not front)):
+		current = front.pop()
+		x = current[0]
+		y = current[1]
+		path.append(current)
+		
+
+
+
+
+# This block of code checks if the target volume (end) has been reached in either Jug A (x) 
+# or Jug B (y). If the target volume is reached, it prints "Found!" and returns the path list,
+# which represents the sequence of states leading to the solution.
+
+		if x == end or y == end:
+			print ("Found!")
+			return path
+		
+
+# These lines implement Rule 1: If Jug A is not full, pour water into Jug A from a tap until it reaches 
+# its capacity. It checks if pouring water to fill Jug A to its capacity will result in a new state 
+# that has not been visited before. If so, the new state is added to the front queue and
+# the visited list.
+
+# These lines implement Rules 2, 3, 4, 5, and 6 of the water jug problem, similar to Rule 1. 
+# Each rule checks a specific pouring operation and adds the resulting state to the front queue 
+# and the visited list if it satisfies the conditions.
+
+		# rule 1
+		if current[0] < x_capacity and ([x_capacity, current[1]] not in visited):
+			front.append([x_capacity, current[1]])
+			visited.append([x_capacity, current[1]])
+
+		# rule 2
+		if current[1] < y_capacity and ([current[0], y_capacity] not in visited):
+			front.append([current[0], y_capacity])
+			visited.append([current[0], y_capacity])
+
+		# rule 3
+		if current[0] > x_capacity and ([0, current[1]] not in visited):
+			front.append([0, current[1]])
+			visited.append([0, current[1]])
+
+		# rule 4
+		if current[1] > y_capacity and ([x_capacity, 0] not in visited):
+			front.append([x_capacity, 0])
+			visited.append([x_capacity, 0])
+
+		# rule 5
+		#(x, y) -> (min(x + y, x_capacity), max(0, x + y - x_capacity)) if y > 0
+		if current[1] > 0 and ([min(x + y, x_capacity), max(0, x + y - x_capacity)] not in visited):
+			front.append([min(x + y, x_capacity), max(0, x + y - x_capacity)])
+			visited.append([min(x + y, x_capacity), max(0, x + y - x_capacity)])
+
+		# rule 6
+		# (x, y) -> (max(0, x + y - y_capacity), min(x + y, y_capacity)) if x > 0
+		if current[0] > 0  and ([max(0, x + y - y_capacity), min(x + y, y_capacity)] not in visited):
+			front.append([max(0, x + y - y_capacity), min(x + y, y_capacity)])
+			visited.append([max(0, x + y - y_capacity), min(x + y, y_capacity)])
+
+
+	return "Not found"
+# If no solution is found within the while loop, this line is reached, and the function returns the
+#  string "Not found".
+
+
+
+
+
+# This block defines the gcd function, which calculates the greatest common divisor (GCD)
+# of two numbers using the Euclidean algorithm.
+
+def gcd(a, b):
+	if a == 0:
+		return b
+	return gcd(b%a, a)
+
+
+
+
+
+start = [0, 0] 
+end = end_x
+
+
+
+
+# This block of code checks if the target volume (end) is a multiple of the greatest common divisor 
+# (GCD) of the jug capacities (x_capacity and y_capacity). If it is, it calls the bfs function with 
+# the provided inputs and prints the returned path. If the conditions are not met, it prints
+# "No solution possible for this combination."
+
+if end % gcd(x_capacity,y_capacity) == 0:
+	print( bfs(start, end, x_capacity, y_capacity))
 else:
-    print("No solution found!")
+	print ("No solution possible for this combination.")
+
+
+
+
+
+
+
+
