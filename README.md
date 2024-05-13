@@ -1,4 +1,5 @@
 # Water-jug-problem
+# Ethiopian Institure of Technology - Mekelle  (EIT-M)
 # AI Group Assignment 1:  Water-jug-problem
 
 
@@ -6,10 +7,10 @@
 |S.No. |Group's name	                | Stud_id            ||
 |------|-----------------------|-----------------------|------|
 | 1.   |	Akrem Beshir                |  ugr/172051/12   |  |
-| 2.   |	Bereket Hailay              |  ugr/172051/12   |  |
-| 3.   |	Daniel Assefa	            |  ugr/172051/12   |  |
-| 4.   |	Dibora Damtew	            |  ugr/172051/12   |  |
-| 5.   |	Hayelom Fereja	            |  ugr/172051/12   |  |
+| 2.   |	Bereket Hailay              |  ugr/172072/12   |  |
+| 3.   |	Daniel Assefa	            |  Mit/ur/301/12   |  |
+| 4.   |	Dibora Damtew	            |  ugr/172595/12   |  |
+| 5.   |	Hayelom Fereja	            |  Mit/ur/244/12   |  |
 
 
 
@@ -37,7 +38,6 @@ Here, let x denote the 4-gallon jug and y denote the 3-gallon jug.
 | 9.	   |(x,y)	         | If (x+y)<4	  | (x+y,0)	     |Pour all water from 3 gallon jug to the 4 gallon jug                  |
 | 10.	  |(x,y)	         |if (x+y)<3	   | (0, x+y)	    |Pour all water from the 4 gallon jug to the 3 gallon jug              |
 
-![image](https://github.com/Siddhipatade/Water-jug-problem/assets/91780318/c686d388-c60e-49f3-ad1f-514d3d7afcae)
 
 
 ### Solution of water jug problem according to the production rules

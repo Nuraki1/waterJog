@@ -5,11 +5,20 @@
 
 #            Group member's name        stud_id
 
-#             1. Akrem Beshir            ugr/172051/12
-#             2. Bereket Hailay
-#             3. Daniel Assefa
-#             4. Dibora Damtew
-#             5. Hayelom Fereja
+#             1. Akrem Beshir             ugr/172051/12
+#             2. Bereket Hailay           ugr/172072/12
+#             3. Daniel Assefa            Mit/ur/301/12
+#             4. Dibora Damtew            ugr/172595/12
+#             5. Hayelom Fereja           Mit/ur/244/12
+
+
+
+
+
+# ```` Check the README.md file for further Explanation ```` #
+
+
+
 
 
 print ("Solution for water jug problem")
